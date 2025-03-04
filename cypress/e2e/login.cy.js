@@ -1,13 +1,13 @@
 describe('Login', () => {
 
-  beforeEach('', ()=> {
+  beforeEach(()=> {
     cy.viewport(1920, 1080)
     cy.visit('https://playground.cyskills.com.br')
+    cy.contains('h2', 'Faça login') // Checkpoint
+      .should('be.visible')
   })
 
   it('Deve logar com sucesso', () => {
-    cy.contains('h2', 'Faça login')
-      .should('be.visible')
     cy.get('[data-cy="email"]').should('be.visible').type('papito@cyskills.com.br')
     cy.get('[data-cy="password"]').should('be.visible').type('showtime')
     cy.get('[data-cy="login-button"]').click()
@@ -17,8 +17,6 @@ describe('Login', () => {
   })
 
   it('Não deve logar com sucesso', () => {
-    cy.contains('h2', 'Faça login')
-      .should('be.visible')
     cy.get('[data-cy="email"]').should('be.visible').type('papito@cyskills.com.br')
     cy.get('[data-cy="password"]').should('be.visible').type('incorreta')
     cy.get('[data-cy="login-button"]').click()
@@ -28,8 +26,6 @@ describe('Login', () => {
   })
 
   it('Não deve logar com e-mail não cadastrado', () => {
-    cy.contains('h2', 'Faça login')
-      .should('be.visible')
     cy.get('[data-cy="email"]').should('be.visible').type('404@cyskills.com.br')
     cy.get('[data-cy="password"]').should('be.visible').type('showtime')
     cy.get('[data-cy="login-button"]').click()
@@ -39,8 +35,6 @@ describe('Login', () => {
   })
 
   it('Não deve logar com e-mail incorreto', () => {
-    cy.contains('h2', 'Faça login')
-      .should('be.visible')
     cy.get('[data-cy="email"]').should('be.visible').type('www.cyskills.com.br')
     cy.get('[data-cy="password"]').should('be.visible').type('showtime')
     cy.get('[data-cy="login-button"]').click()
@@ -50,8 +44,6 @@ describe('Login', () => {
   })
 
   it('Não deve logar com senha inválida (menos de 6 caracteres)', () => {
-    cy.contains('h2', 'Faça login')
-      .should('be.visible')
     cy.get('[data-cy="email"]').should('be.visible').type('papito@cyskills.com.br')
     cy.get('[data-cy="password"]').should('be.visible').type('12345')
     cy.get('[data-cy="login-button"]').click()
