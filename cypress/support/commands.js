@@ -48,3 +48,10 @@ Cypress.Commands.add('noticeHave', (text) => {
         .should('be.visible')
         .and('have.text', text)
 })
+
+Cypress.Commands.add('goTo', (route, title) => {
+    cy.get(`nav a[href="${route}"]`)
+            .click()
+        cy.contains('h2', title)
+            .should('be.visible') // Checkpoint (Valida que a pgina de "Text Area" foi carregada corretamente)
+})
