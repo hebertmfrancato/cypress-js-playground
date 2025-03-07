@@ -24,23 +24,23 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('goHome', ()=> {
+Cypress.Commands.add('goHome', () => {
     cy.viewport(1920, 1080)
     cy.visit('https://playground.cyskills.com.br')
     cy.contains('h2', 'Faça login') // Checkpoint
-      .should('be.visible')
+        .should('be.visible')
 })
 
-Cypress.Commands.add('login', (email, password) => {
-    cy.get('[data-cy="email"]').should('be.visible').type(email)
+Cypress.Commands.add('login', (username = Cypress.env('CYPRESS_USERNAME'), password = Cypress.env('CYPRESS_PASSWORD')) => {
+    cy.get('[data-cy="email"]').should('be.visible').type(username)
     cy.get('[data-cy="password"]').should('be.visible').type(password)
     cy.get('[data-cy="login-button"]').click()
 })
 
-Cypress.Commands.add('userLoggedIn', ()=> {
+Cypress.Commands.add('userLoggedIn', () => {
     cy.get('[data-cy="welcome-title"]')
-      .should('be.visible')
-      .and('have.text', 'Boas vindas ao Cypress Playground')
+        .should('be.visible')
+        .and('have.text', 'Boas vindas ao Cypress Playground')
 })
 
 Cypress.Commands.add('noticeHave', (text) => {
@@ -51,7 +51,7 @@ Cypress.Commands.add('noticeHave', (text) => {
 
 Cypress.Commands.add('goTo', (route, title) => {
     cy.get(`nav a[href="${route}"]`)
-            .click()
-        cy.contains('h2', title)
-            .should('be.visible') // Checkpoint (Valida que a pgina de "Text Area" foi carregada corretamente)
+        .click()
+    cy.contains('h2', title)
+        .should('be.visible') // Checkpoint (Valida que a pgina de "Text Area" foi carregada corretamente)
 })
