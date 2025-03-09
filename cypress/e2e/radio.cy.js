@@ -2,8 +2,7 @@ describe('Radio Buttons', () => {
 
     beforeEach(() => {
         cy.goHome()
-        cy.login()
-        cy.userLoggedIn() // Checkpoint (Valida que o login foi bem-sucedido)
+        cy.doLogin()
         cy.goTo('/radio', 'Radio Buttons')
     })
 
@@ -12,5 +11,5 @@ describe('Radio Buttons', () => {
             .click()
         cy.get('#cypress')
             .should('be.checked')
-    });
-});
+    })
+})

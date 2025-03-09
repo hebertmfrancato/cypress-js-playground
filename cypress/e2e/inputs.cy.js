@@ -1,11 +1,11 @@
 describe('Input Fields', () => {
+    
     beforeEach(() => {
         cy.goHome()
+        cy.doLogin()
     })
 
     it('Deve preencher o campo texto', () => {
-        cy.login()
-        cy.userLoggedIn() // Checkpoint (Valida que o login foi bem-sucedido)
         cy.get('a[href="/input-fields"]')
             .click()
         cy.contains('h2', 'Input Fields')

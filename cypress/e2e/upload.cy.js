@@ -15,7 +15,7 @@ describe('Upload', () => {
             })
     });
 
-    it.only('Deve fazer upload de uma imagem', () => {
+    it('Deve fazer upload de uma imagem', () => {
         cy.get('input[name="photo"]')
             .selectFile('cypress/fixtures/liga.jpg')
             .then(element => {

@@ -31,6 +31,11 @@ Cypress.Commands.add('goHome', () => {
         .should('be.visible')
 })
 
+Cypress.Commands.add('doLogin', () => {
+    cy.login()
+    cy.userLoggedIn() // Checkpoint (Valida que o login foi bem-sucedido)
+})
+
 Cypress.Commands.add('login', (username = Cypress.env('CYPRESS_USERNAME'), password = Cypress.env('CYPRESS_PASSWORD')) => {
     // Verifica se o username foi passado antes de tentar digitar no campo
     // Isso permite que o teste ignore o campo de e-mail quando não for necessário preencher
@@ -42,7 +47,7 @@ Cypress.Commands.add('login', (username = Cypress.env('CYPRESS_USERNAME'), passw
     // Verifica se a senha foi passada antes de tentar digitar no campo
     // Isso permite que o teste ignore o campo de senha quando não for necessário preencher
     if (password) {
-        cy.get('[data-cy="email"]')
+        cy.get('[data-cy="password"]')
             .should('be.visible')
             .type(password)
     }

@@ -1,8 +1,7 @@
 describe('Checkbox', () => {
     beforeEach(() => {
         cy.goHome()
-        cy.login()
-        cy.userLoggedIn() // Checkpoint (Valida que o login foi bem-sucedido)
+        cy.doLogin()
         cy.goTo('/checkbox', 'Checkbox')
     })
 

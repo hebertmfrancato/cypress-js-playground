@@ -2,8 +2,7 @@ describe('Select', () => {
     
     beforeEach(() => {
         cy.goHome()
-        cy.login()
-        cy.userLoggedIn() // Checkpoint (Valida que o login foi bem-sucedido)
+        cy.doLogin()
         cy.goTo('/select', 'Select')
     })
 
@@ -27,5 +26,5 @@ describe('Select', () => {
 
         cy.get('.language-item')
             .should('have.length', langs.length)
-    });
-});
+    })
+})
