@@ -36,4 +36,19 @@ describe('Login', () => {
     cy.login(username, shortPassword)
     cy.noticeHave('A senha precisa ter pelo menos 6 caracteres. Vamos tentar de novo!')
   })
+
+  it('Não deve logar sem o e-mail', () => {
+    cy.login('', Password)
+    cy.noticeHave('Parece que você esqueceu de informar seu e-mail.')
+  })
+
+  it('Não deve logar sem o e-mail', () => {
+    cy.login(username, '')
+    cy.noticeHave('Por favor, digite sua senha para continuar.')
+  })
+
+  it.only('Não deve logar sem o e-mail e sem a senha', () => {
+    cy.login('', '')
+    cy.noticeHave('Parece que você esqueceu de informar seu e-mail.')
+  })
 })

@@ -32,9 +32,23 @@ Cypress.Commands.add('goHome', () => {
 })
 
 Cypress.Commands.add('login', (username = Cypress.env('CYPRESS_USERNAME'), password = Cypress.env('CYPRESS_PASSWORD')) => {
-    cy.get('[data-cy="email"]').should('be.visible').type(username)
-    cy.get('[data-cy="password"]').should('be.visible').type(password)
-    cy.get('[data-cy="login-button"]').click()
+    // Verifica se o username foi passado antes de tentar digitar no campo
+    // Isso permite que o teste ignore o campo de e-mail quando não for necessário preencher
+    if (username) {
+        cy.get('[data-cy="email"]').should('be.visible')
+            .type(username)
+    }
+
+    // Verifica se a senha foi passada antes de tentar digitar no campo
+    // Isso permite que o teste ignore o campo de senha quando não for necessário preencher
+    if (password) {
+        cy.get('[data-cy="email"]')
+            .should('be.visible')
+            .type(password)
+    }
+
+    cy.get('[data-cy="login-button"]')
+        .click()
 })
 
 Cypress.Commands.add('userLoggedIn', () => {
