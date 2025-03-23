@@ -36,7 +36,7 @@ describe('Tables', () => {
             .should('contain', name)
     })
 
-    it.only('Deve validar o link que abre o Instagram em outra aba', () => {
+    it('Deve validar o link que abre o Instagram em outra aba', () => {
         const id = 'instapapito'
 
         cy.contains('table tbody tr', id)

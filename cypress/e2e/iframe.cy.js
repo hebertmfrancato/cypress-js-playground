@@ -6,13 +6,14 @@ describe('Iframe', () => {
     })
 
     it('Deve preencher o nome em uma página que tem Iframe', () => {
-        
-        cy.get('[data-cy="iframe-inputs"]')
+
+        cy.get('[data-cy="iframe-inputs"]', { timeout: 10000 })
+            .should('be.visible')
             .then(($iframe) => {
                 const $body = $iframe.contents().find('body')
-                
+            
                 cy.wrap($body)
-                    .find('#fullname')
+                    .find('[data-cy="fullname"]', { timeout: 10000 })
                     .type('Hebert Francato')
             })
     })
