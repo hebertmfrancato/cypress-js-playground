@@ -12,7 +12,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cypress/request@npm:^3.0.4":
+"@cypress/request@npm:^3.0.7":
   version: 3.0.8
   resolution: "@cypress/request@npm:3.0.8"
   dependencies:
@@ -49,11 +49,11 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*":
-  version: 22.13.9
-  resolution: "@types/node@npm:22.13.9"
+  version: 22.13.11
+  resolution: "@types/node@npm:22.13.11"
   dependencies:
     undici-types: "npm:~6.20.0"
-  checksum: 10c0/eb6acd04169a076631dcaab712128d492cd17a1b3f10daae4a377f3d439c860c3cd3e32f4ef221671f56183b976ac7c4089f4193457314a88675ead4663438a4
+  checksum: 10c0/f6ee33d36372242535c38640fe7550a6640d8a775ec19b55bfc11775b521cba072d892ca92a912332ce01b317293d645c1bf767f3f882ec719f2404a3d2a5b96
   languageName: node
   linkType: hard
 
@@ -285,10 +285,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ci-info@npm:^3.2.0":
-  version: 3.9.0
-  resolution: "ci-info@npm:3.9.0"
-  checksum: 10c0/6f0109e36e111684291d46123d491bc4e7b7a1934c3a20dea28cba89f1d4a03acd892f5f6a81ed3855c38647e285a150e3c9ba062e38943bef57fee6c1554c3a
+"ci-info@npm:^4.1.0":
+  version: 4.2.0
+  resolution: "ci-info@npm:4.2.0"
+  checksum: 10c0/37a2f4b6a213a5cf835890eb0241f0d5b022f6cfefde58a69e9af8e3a0e71e06d6ad7754b0d4efb9cd2613e58a7a33996d71b56b0d04242722e86666f3f3d058
   languageName: node
   linkType: hard
 
@@ -308,7 +308,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cli-table3@npm:~0.6.1":
+"cli-table3@npm:~0.6.5":
   version: 0.6.5
   resolution: "cli-table3@npm:0.6.5"
   dependencies:
@@ -395,11 +395,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cypress@npm:13.15.0":
-  version: 13.15.0
-  resolution: "cypress@npm:13.15.0"
+"cypress@npm:^14.2.0":
+  version: 14.2.0
+  resolution: "cypress@npm:14.2.0"
   dependencies:
-    "@cypress/request": "npm:^3.0.4"
+    "@cypress/request": "npm:^3.0.7"
     "@cypress/xvfb": "npm:^1.2.4"
     "@types/sinonjs__fake-timers": "npm:8.1.1"
     "@types/sizzle": "npm:^2.3.2"
@@ -410,8 +410,9 @@ __metadata:
     cachedir: "npm:^2.3.0"
     chalk: "npm:^4.1.0"
     check-more-types: "npm:^2.24.0"
+    ci-info: "npm:^4.1.0"
     cli-cursor: "npm:^3.1.0"
-    cli-table3: "npm:~0.6.1"
+    cli-table3: "npm:~0.6.5"
     commander: "npm:^6.2.1"
     common-tags: "npm:^1.8.0"
     dayjs: "npm:^1.10.4"
@@ -424,7 +425,6 @@ __metadata:
     figures: "npm:^3.2.0"
     fs-extra: "npm:^9.1.0"
     getos: "npm:^3.2.1"
-    is-ci: "npm:^3.0.1"
     is-installed-globally: "npm:~0.4.0"
     lazy-ass: "npm:^1.6.0"
     listr2: "npm:^3.8.3"
@@ -439,11 +439,12 @@ __metadata:
     semver: "npm:^7.5.3"
     supports-color: "npm:^8.1.1"
     tmp: "npm:~0.2.3"
+    tree-kill: "npm:1.2.2"
     untildify: "npm:^4.0.0"
     yauzl: "npm:^2.10.0"
   bin:
     cypress: bin/cypress
-  checksum: 10c0/d453c89f8220aecb726f842ea2895f452a4ec0c74f718834354533da62d28545eb68fc3ac21209df52d4314b4db4221d26ce8f33a6f08641eec3b4269f037717
+  checksum: 10c0/70d9ca4bf5154f542a51665e19484828cbb52c2e618fb41aff5b6d37eaf1530d71aca794edd4d58c5823c3b83d03efb207d41e78d843103688fb47fe2eeaee93
   languageName: node
   linkType: hard
 
@@ -863,17 +864,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-ci@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "is-ci@npm:3.0.1"
-  dependencies:
-    ci-info: "npm:^3.2.0"
-  bin:
-    is-ci: bin.js
-  checksum: 10c0/0e81caa62f4520d4088a5bef6d6337d773828a88610346c4b1119fb50c842587ed8bef1e5d9a656835a599e7209405b5761ddf2339668f2d0f4e889a92fe6051
-  languageName: node
-  linkType: hard
-
 "is-fullwidth-code-point@npm:^3.0.0":
   version: 3.0.0
   resolution: "is-fullwidth-code-point@npm:3.0.0"
@@ -1176,7 +1166,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "playground@workspace:."
   dependencies:
-    cypress: "npm:13.15.0"
+    cypress: "npm:^14.2.0"
     dotenv: "npm:^16.4.7"
   languageName: unknown
   linkType: soft
@@ -1452,21 +1442,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tldts-core@npm:^6.1.83":
-  version: 6.1.83
-  resolution: "tldts-core@npm:6.1.83"
-  checksum: 10c0/097be8b909eb86a420d11e74a17461407b517b7f1fa26434de6b5a3f43b1336065e4162024ef02404d1425b572fb6afdeff31c5d03e9d42d806166394bcbd588
+"tldts-core@npm:^6.1.85":
+  version: 6.1.85
+  resolution: "tldts-core@npm:6.1.85"
+  checksum: 10c0/f028759b361bef86d3dd8dbaaa010b4c3aca236ec7ba097658b9a595243bb34c98206e410cc3631055af6ed34012f5da7e9af2c4e38e218d5fc693df6ab3da33
   languageName: node
   linkType: hard
 
 "tldts@npm:^6.1.32":
-  version: 6.1.83
-  resolution: "tldts@npm:6.1.83"
+  version: 6.1.85
+  resolution: "tldts@npm:6.1.85"
   dependencies:
-    tldts-core: "npm:^6.1.83"
+    tldts-core: "npm:^6.1.85"
   bin:
     tldts: bin/cli.js
-  checksum: 10c0/85186a9ae342e4d0eac34d0b1a645e8c35e62dbdcc5f0ee8ae11e7a8221eb9bce5a97e57723b12d76e3866c2467f232b6408c09d94c907ecc7998a507ca2c66b
+  checksum: 10c0/83bc222046f36a9ca071b662e3272bb1e98e849fa4bddfab0a3eba8804a4a539b02bcbe55e1277fe713de6677e55104da2ef9a54d006c642b6e9f26c7595d5aa
   languageName: node
   linkType: hard
 
@@ -1483,6 +1473,15 @@ __metadata:
   dependencies:
     tldts: "npm:^6.1.32"
   checksum: 10c0/5f95023a47de0f30a902bba951664b359725597d8adeabc66a0b93a931c3af801e1e697dae4b8c21a012056c0ea88bd2bf4dfe66b2adcf8e2f42cd9796fe0626
+  languageName: node
+  linkType: hard
+
+"tree-kill@npm:1.2.2":
+  version: 1.2.2
+  resolution: "tree-kill@npm:1.2.2"
+  bin:
+    tree-kill: cli.js
+  checksum: 10c0/7b1b7c7f17608a8f8d20a162e7957ac1ef6cd1636db1aba92f4e072dc31818c2ff0efac1e3d91064ede67ed5dc57c565420531a8134090a12ac10cf792ab14d2
   languageName: node
   linkType: hard
 
